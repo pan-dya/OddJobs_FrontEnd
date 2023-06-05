@@ -34,7 +34,7 @@ const Service = ({ selectedService, setSelectedService }) => {
     const grabAddress = async () => {
       try {
         const response = await axios.get(
-          `https://oddjobsbackend-production.up.railway.app/${userId}`
+          `https://oddjobsbackend-production.up.railway.app/addresses/${userId}`
         );
         const userAddress = response.data;
         const province = userAddress.province;
