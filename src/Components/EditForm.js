@@ -29,7 +29,7 @@ const EditForm = () => {
   const update_User = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`https://oddjobsbackend-production.up.railway.app/${userId}`, {
+      await axios.put(`https://oddjobsbackend-production.up.railway.app/users/${userId}`, {
         name: name,
       });
       navigate(0);
