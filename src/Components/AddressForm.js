@@ -41,7 +41,7 @@ const AddressForm = () => {
 
       if (existingAddress.length > 0) {
         // Address exists, perform update
-        await axios.put(`https://https://oddjobsbackend-production.up.railway.app/address/${userId}`, {
+        await axios.put(`https://oddjobsbackend-production.up.railway.app/address/${userId}`, {
           province: province,
           city: city,
           regency: regency,
