@@ -12,7 +12,7 @@ const EditForm = () => {
   useEffect(() => {
     const refreshToken = async () => {
       try {
-        const response = await axios.get("https://odd-jobs-back-end.vercel.app/token");
+        const response = await axios.get("https://oddjobsbackend-production.up.railway.app/token");
         const decoded = jwt_decode(response.data.accessToken);
         setName(decoded.name);
         setEmail(decoded.email);
@@ -29,7 +29,7 @@ const EditForm = () => {
   const update_User = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`https://odd-jobs-back-end.vercel.app/users/${userId}`, {
+      await axios.put(`https://oddjobsbackend-production.up.railway.app/${userId}`, {
         name: name,
       });
       navigate(0);

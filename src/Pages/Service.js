@@ -19,7 +19,7 @@ const Service = ({ selectedService, setSelectedService }) => {
   useEffect(() => {
     const refreshToken = async () => {
       try {
-        const response = await axios.get("https://odd-jobs-back-end.vercel.app/token");
+        const response = await axios.get("https://oddjobsbackend-production.up.railway.app/token");
         const decoded = jwt_decode(response.data.accessToken);
         setName(decoded.name);
         setEmail(decoded.email);
@@ -34,7 +34,7 @@ const Service = ({ selectedService, setSelectedService }) => {
     const grabAddress = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/addresses/${userId}`
+          `https://oddjobsbackend-production.up.railway.app/${userId}`
         );
         const userAddress = response.data;
         const province = userAddress.province;
@@ -71,7 +71,7 @@ const Service = ({ selectedService, setSelectedService }) => {
   const AddToDB = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://odd-jobs-back-end.vercel.app/services", {
+      await axios.post("https://oddjobsbackend-production.up.railway.app/services", {
         typeOfService: selectedService,
         details: serviceDetails,
         userId: userId,

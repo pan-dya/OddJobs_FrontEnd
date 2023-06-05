@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const Logout = async () => {
     try {
-      await axios.delete("https://odd-jobs-back-end.vercel.app/logout");
+      await axios.delete("https://oddjobsbackend-production.up.railway.app/logout");
       navigate("/login");
     } catch (error) {
       console.log(error);

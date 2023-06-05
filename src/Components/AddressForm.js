@@ -22,7 +22,7 @@ const AddressForm = () => {
 
   const fetchUser = async () => {
     try {
-      const response = await axios.get("https://odd-jobs-back-end.vercel.app/token");
+      const response = await axios.get("https://oddjobsbackend-production.up.railway.app/token");
       const decoded = jwt_decode(response.data.accessToken);
       setUserId(decoded.userId);
     } catch (error) {
@@ -35,13 +35,13 @@ const AddressForm = () => {
 
     try {
       const response = await axios.get(
-        `https://odd-jobs-back-end.vercel.app/${userId}`
+        `https://oddjobsbackend-production.up.railway.app/${userId}`
       );
       const existingAddress = response.data;
 
       if (existingAddress.length > 0) {
         // Address exists, perform update
-        await axios.put(`https://odd-jobs-back-end.vercel.app/address/${userId}`, {
+        await axios.put(`https://https://oddjobsbackend-production.up.railway.app/${userId}`, {
           province: province,
           city: city,
           regency: regency,
@@ -52,7 +52,7 @@ const AddressForm = () => {
         setMsg("Address Successfully Updated");
       } else {
         // Address does not exist, perform create
-        await axios.post("https://odd-jobs-back-end.vercel.app/address", {
+        await axios.post("https://oddjobsbackend-production.up.railway.app/address", {
           province: province,
           city: city,
           regency: regency,

@@ -14,7 +14,7 @@ const Login = () => {
   const Auth = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://odd-jobs-back-end.vercel.app/login", {
+      await axios.post("https://oddjobsbackend-production.up.railway.app/login", {
         email: email,
         password: pwd,
       });
